@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="animated">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#boracodar | 02 - Product Card</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600&family=Lato:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="product-image">
+        <button id="btn-360" onclick="toggle()">
+          <img
+            src="assets/360.svg"
+            alt="Click this button to animate the sofa"
+          />
+        </button>
+
+        <button id="btn-close" onclick="toggle()">
+          <img src="assets/close.svg" alt="stop animating the couch" />
+        </button>
+
+        <img id="static" src="assets/sofa.jpg" alt="sofa" />
+        <img id="animated" src="assets/sofa.gif" alt="animated sofa" />
+      </div>
+
+      <div id="product-details">
+        <h4>CODE: 42404</h4>
+        <h1>Sofa Margot II - Rose</h1>
+        <p>$599.00</p>
+        <button>ADD TO BASKET</button>
+      </div>
+    </div>
+
+    <script>
+      function toggle() {
+        document.documentElement.classList.toggle("animated")
+      }
+    </script>
+  </body>
+</html>

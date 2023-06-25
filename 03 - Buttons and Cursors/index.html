@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#boracodar | 03 - Buttons and Cursors</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/phosphor-icons"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="wrapper">
+        <div class="left-side">
+          <h1>Button types</h1>
+          <p>
+            Within a layout, buttons serve to highlight important actions to be
+            taken. follow below an example of types and properties
+          </p>
+
+          <div class="table">
+            <table cellspacing="0" cellpadding="0">
+              <thead>
+                <tr class="header">
+                  <th></th>
+                  <th>Primary Button</th>
+                  <th>Secondary Button</th>
+                  <th>Tertiary Button</th>
+                  <th class="cursor">Cursor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="leftHeader">Default</td>
+                  <td>
+                    <button id="btn-default-primary">Default Primary</button>
+                  </td>
+                  <td>
+                    <button id="btn-default-secondary">
+                      Default Secondary
+                    </button>
+                  </td>
+                  <td>
+                    <button id="btn-default-tertiary">Default Tertiary</button>
+                  </td>
+                  <td class="cursor">
+                    <img src="/assets/normal_pointer.svg" alt="" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="leftHeader">Hover</td>
+                  <td><button id="btn-hover-primary">Hover Primary</button></td>
+                  <td>
+                    <button id="btn-hover-secondary">Hover Secondary</button>
+                  </td>
+                  <td>
+                    <button id="btn-hover-tertiary">Hover Tertiary</button>
+                  </td>
+                  <td class="cursor">
+                    <img src="/assets/normal_pointer.svg" alt="" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="leftHeader">Focus</td>
+                  <td><button id="btn-focus-primary">Focus Primary</button></td>
+                  <td>
+                    <button id="btn-focus-secondary">Focus Secondary</button>
+                  </td>
+                  <td>
+                    <button id="btn-focus-tertiary">Focus Tertiary</button>
+                  </td>
+                  <td class="cursor">
+                    <img src="/assets/normal_pointer.svg" alt="" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="leftHeader">Disabled</td>
+                  <td>
+                    <button id="btn-disabled-primary">Disabled Primary</button>
+                  </td>
+                  <td>
+                    <button id="btn-disabled-secondary">
+                      Disabled Secondary
+                    </button>
+                  </td>
+                  <td>
+                    <button id="btn-disabled-tertiary">
+                      Disabled Tertiary
+                    </button>
+                  </td>
+                  <td class="cursor">
+                    <img src="/assets/block_pointer.png" alt="" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="leftHeader">Loading</td>
+                  <td>
+                    <button id="btn-loading-primary">
+                      <img src="/assets/loading.png" alt="" /> Loading Primary
+                    </button>
+                  </td>
+                  <td>
+                    <button id="btn-loading-secondary">
+                      <img src="/assets/loading.png" alt="" /> Loading Secondary
+                    </button>
+                  </td>
+                  <td>
+                    <button id="btn-loading-tertiary">
+                      <img src="/assets/loading.png" alt="" /> Loading Tertiary
+                    </button>
+                  </td>
+                  <td class="cursor">
+                    <img src="/assets/loading_pointer.svg" alt="" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="leftHeader">Movable</td>
+                  <td>
+                    <button id="btn-movable-primary">
+                      <img src="/assets/reorder_white.svg" alt="" /> Movable
+                      PRIMARY
+                    </button>
+                  </td>
+                  <td>
+                    <button id="btn-movable-secondary">
+                      <img src="/assets/reorder_white.svg" alt="" /> Movable
+                      Secondary
+                    </button>
+                  </td>
+                  <td>
+                    <button id="btn-movable-tertiary">
+                      <img src="/assets/reorder_white.svg" alt="" /> Movable
+                      Tertiary
+                    </button>
+                  </td>
+                  <td class="cursor">
+                    <img src="/assets/move_pointer.svg" alt="" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="right-side">
+          <h1>Test the buttons</h1>
+          <p>
+            Interact with the buttons and watch the appearance and cursors
+            change
+          </p>
+
+          <div class="buttons">
+            <button class="primary" onclick="loading(event)">
+              Interact with me
+            </button>
+
+            <button class="secondary">Interact with me</button>
+
+            <button class="tertiary movable">
+              <i class="ph-list"></i>
+              Interact with me
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function loading(event) {
+        const button = event.currentTarget
+        button.classList.add("loading")
+        const text = button.textContent
+        button.innerHTML = `
+      <i class="ph-circle-notch"></i>
+      ${text}
+      `
+      }
+    </script>
+  </body>
+</html>
